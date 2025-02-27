@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<persistence xmlns="https://jakarta.ee/xml/ns/persistence"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence 
+                        https://jakarta.ee/xml/ns/persistence/persistence_3_0.xsd"
+    version="3.0"> 
+
+
+
+	<!-- 
+	Java VM에 생성되는 영속성(Persistance) 개체의 이름을 MyJPA로 지정한다.-->
+   <!--  <persistence-unit name="MyJPA" transaction-type="RESOURCE_LOCAL">
+        엔티티로 사용할 클래스의 풀 경로(이 부분을 변경하면서 진행할 것임)
+        <class>myjpa1.Member1</class>
+        명시적으로 나열된 클래스들만 엔티티로 인식
+        <exclude-unlisted-classes>true</exclude-unlisted-classes>
+
+        <properties>
+            필수 데이터베이스 접속 정보
+            <property name="jakarta.persistence.jdbc.driver" 
+                      value="oracle.jdbc.OracleDriver" />
+            <property name="jakarta.persistence.jdbc.url" 
+                      value="jdbc:oracle:thin:@localhost:1521:xe" />
+            <property name="jakarta.persistence.jdbc.user" 
+                      value="education" />
+            <property name="jakarta.persistence.jdbc.password" 
+                      value="1234" />
+
+            SQL 방언(dialect): 하이버네이트가 특정 데이터베이스에 맞는
+            SQL을 생성하도록 설정.여기서는 오라클에서 사용할 수 있는 쿼리문을 생성한다.
+            <property name="hibernate.dialect" 
+                      value="org.hibernate.dialect.OracleDialect" />
+            <property name="hibernate.show_sql" 
+                      value="true" />
+            <property name="hibernate.format_sql" 
+                      value="true" />
+            <property name="hibernate.id.new_generator_mappings" 
+                      value="true" />
+
+			
+			스프링 컨테이너를 시작할때 사용할 수 있는 옵션
+			create : 시작할 때 기존 테이블 삭제 후 다시 생성한다.
+			drop + crate
+			none : 아무 작업도 하지 않는다.
+			실무에서는 오라클에 테이블과 시퀀스를 sql문을 통해서 만들어두고
+			none으로 설정하는것이 좋다
+			 
+            테이블 생성/수정/삭제 옵션
+            <property name="hibernate.hbm2ddl.auto"  
+                      value="create" />
+        </properties>
+    </persistence-unit>
+     <persistence-unit name="MyJPA" transaction-type="RESOURCE_LOCAL">
+        엔티티로 사용할 클래스의 풀 경로(이 부분을 변경하면서 진행할 것임)
+        <class>myjpa2.Member2</class>
+        명시적으로 나열된 클래스들만 엔티티로 인식
+        <exclude-unlisted-classes>true</exclude-unlisted-classes>
+
+        <properties>
+            필수 데이터베이스 접속 정보
+            <property name="jakarta.persistence.jdbc.driver" 
+                      value="oracle.jdbc.OracleDriver" />
+            <property name="jakarta.persistence.jdbc.url" 
+                      value="jdbc:oracle:thin:@localhost:1521:xe" />
+            <property name="jakarta.persistence.jdbc.user" 
+                      value="education" />
+            <property name="jakarta.persistence.jdbc.password" 
+                      value="1234" />
+
+            SQL 방언(dialect): 하이버네이트가 특정 데이터베이스에 맞는
+            SQL을 생성하도록 설정.여기서는 오라클에서 사용할 수 있는 쿼리문을 생성한다.
+            <property name="hibernate.dialect" 
+                      value="org.hibernate.dialect.OracleDialect" />
+            <property name="hibernate.show_sql" 
+                      value="true" />
+            <property name="hibernate.format_sql" 
+                      value="true" />
+            <property name="hibernate.id.new_generator_mappings" 
+                      value="true" />
+
+			
+			스프링 컨테이너를 시작할때 사용할 수 있는 옵션
+			create : 시작할 때 기존 테이블 삭제 후 다시 생성한다.
+			drop + crate
+			none : 아무 작업도 하지 않는다.
+			실무에서는 오라클에 테이블과 시퀀스를 sql문을 통해서 만들어두고
+			none으로 설정하는것이 좋다
+			 
+            테이블 생성/수정/삭제 옵션
+            <property name="hibernate.hbm2ddl.auto"  
+                      value="create" />
+        </properties>
+    </persistence-unit> -->
+    <!-- 세 번째 영속성 유닛: myjpa3.Member3 -->
+    <persistence-unit name="MyJPA" transaction-type="RESOURCE_LOCAL">
+        <class>myjpa3.Member3</class>
+        <exclude-unlisted-classes>true</exclude-unlisted-classes>
+        
+        <properties>
+            <property name="jakarta.persistence.jdbc.driver" value="oracle.jdbc.OracleDriver" />
+            <property name="jakarta.persistence.jdbc.url" value="jdbc:oracle:thin:@localhost:1521:xe" />
+            <property name="jakarta.persistence.jdbc.user" value="education" />
+            <property name="jakarta.persistence.jdbc.password" value="1234" />
+
+            <property name="hibernate.dialect" value="org.hibernate.dialect.OracleDialect" />
+            <property name="hibernate.show_sql" value="true" />
+            <property name="hibernate.format_sql" value="true" />
+            <property name="hibernate.id.new_generator_mappings" value="true" />
+            
+            <property name="hibernate.hbm2ddl.auto" value="none" />
+        </properties>
+    </persistence-unit>
+</persistence>
